@@ -4,10 +4,11 @@ Spatial data examples
 
 Resources to discuss:
 
-* ERA5 reanalysis climate data
-* WorldClim climatology
-* SPEI drought index
-* MODIS
+* [ERA5 reanalysis climate data](https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5)
+* [WorldClim climatology](https://www.worldclim.org/data/worldclim21.html)
+* [SPEI drought index](https://spei.csic.es/database.html)
+* [MODIS](https://www.earthdata.nasa.gov/sensors/modis)
+* [SoilGrids](https://soilgrids.org)
 
 Packages to discuss:
 
