@@ -46,6 +46,7 @@ monthly$month <- as.numeric(gsub("wc2.1_10m_tavg_", "", monthly$name))
 monthly <- dplyr::left_join(monthly, coords)
 
 library(ggplot2)
-p <- ggplot(monthly, aes(month, value, color = place)) + geom_line() + ylab("Air temperature")
+p <- ggplot(monthly, aes(month, value, color = place)) + geom_line() +
+  ylab("Air temperature") + ggtitle("Climatology")
 print(p)
 
