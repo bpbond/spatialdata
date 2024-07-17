@@ -49,5 +49,5 @@ po/*~
 rsconnect/
 
 # Data
-worldclim_data/
-spei_data/
+worldclim_data/**/*.tif
+spei_data/*.nc
