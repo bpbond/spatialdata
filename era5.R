@@ -1,6 +1,6 @@
 # ERA5 data
 
-# This will be very similar to the SPEI one
+# This example will be very similar to the SPEI one
 
 library(tibble)
 coords <- tribble(
@@ -17,7 +17,6 @@ coords$ID <- seq_len(nrow(coords))
 
 # These data are provided as GRIB files (https://en.wikipedia.org/wiki/GRIB)
 # Happily, the terra package can handle these!
-# (There's also the `ncdf4` package for many other applications)
 library(terra)
 era5 <- rast("era5_data/adaptor.mars.internal-1721213296.76056-28229-7-77f05425-fcb9-4bef-b7a7-f778ba8d88b6.grib")
 # Note that we've told Git to IGNORE these data files; see ".gitignore" file
@@ -41,5 +40,6 @@ era5_monthly <- dplyr::left_join(era5_monthly, coords, by = "ID")
 # documentation says it's K, which is clearly right
 
 library(ggplot2)
-p <- ggplot(era5_monthly, aes(month, value, color = place)) + geom_line() + ggtitle("2013")
+p <- ggplot(era5_monthly, aes(month, value - 273.1, color = place)) +
+  geom_line() + ggtitle("2013")
 print(p)
