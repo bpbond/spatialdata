@@ -20,6 +20,8 @@ coords$ID <- seq_len(nrow(coords))
 # (There's also the `ncdf4` package for many other applications)
 library(terra)
 era5 <- rast("era5_data/adaptor.mars.internal-1721213296.76056-28229-7-77f05425-fcb9-4bef-b7a7-f778ba8d88b6.grib")
+# Note that we've told Git to IGNORE these data files; see ".gitignore" file
+
 # Confirm that things look good -- it's a spatial raster object,
 # global half degree resolution, from January 1901 to December 2022
 print(era5)

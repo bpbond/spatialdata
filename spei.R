@@ -19,6 +19,8 @@ coords$ID <- seq_len(nrow(coords))
 # (There's also the `ncdf4` package for many other applications)
 library(terra)
 spei <- rast("spei_data/spei01.nc")
+# Note that we've told Git to IGNORE these data files; see ".gitignore" file
+
 # Confirm that things look good -- it's a spatial raster object,
 # global half degree resolution, from January 1901 to December 2022
 print(spei)
