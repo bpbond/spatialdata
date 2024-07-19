@@ -53,3 +53,4 @@ worldclim_data/**/*.tif
 spei_data/*.nc
 era5_data/*.grib
 modis_data/*.hdf
+soilgrids_data/*.tif
