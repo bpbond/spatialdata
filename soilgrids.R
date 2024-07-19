@@ -21,7 +21,7 @@
 # Step 2: extract in R
 
 # This uses the older raster package
-# I have not yet rewritten this for terra, but it should be straightforward
+# I have not yet rewritten this for terra and sp
 library(raster)
 clay <- raster("./soilgrids_data/clay_15-30cm_mean.tif")
 x_points <- SpatialPoints(coords[2:3],
