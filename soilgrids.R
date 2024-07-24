@@ -38,6 +38,6 @@ ocs <- raster("./soilgrids_data/ocs_0-30cm_mean.tif")
 x_points <- SpatialPoints(coords[2:3],
                           proj4string = CRS("+proj=longlat +datum=WGS84"))
 x_points <- spTransform(x_points, projection(ocs))
-print(extract(ocs, x_points, buffer = 1000, fun = mean))
+print(raster::extract(ocs, x_points, buffer = 1000, fun = mean))
 
 # This returns NA for Lima -- not sure why
