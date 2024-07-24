@@ -2,6 +2,17 @@
 
 # This is more complicated
 
+library(tibble)
+coords <- tribble(
+  ~place,  ~lon,         ~lat,
+  "JGCRI",    -76.92238, 38.97160,
+  "Thompson", -97.84862, 55.74706,
+  "Fes",      -5.01007,  34.03614,
+  "Lima",     -77.03086, -12.04545
+)
+coords$ID <- seq_len(nrow(coords))
+
+
 # ---------------------------------------------------------
 # Step 1 - download desired and use gdal to make a geoTIFF
 # See https://gdal.org/index.html
@@ -23,8 +34,10 @@
 # This uses the older raster package
 # I have not yet rewritten this for terra and sp
 library(raster)
-clay <- raster("./soilgrids_data/clay_15-30cm_mean.tif")
+ocs <- raster("./soilgrids_data/ocs_0-30cm_mean.tif")
 x_points <- SpatialPoints(coords[2:3],
                           proj4string = CRS("+proj=longlat +datum=WGS84"))
-x_points <- spTransform(x_points, projection(clay))
-extract(clay, x_points, buffer = 1000, fun = mean)
+x_points <- spTransform(x_points, projection(ocs))
+print(extract(ocs, x_points, buffer = 1000, fun = mean))
+
+# This returns NA for Lima -- not sure why
