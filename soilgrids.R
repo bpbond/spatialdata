@@ -2,6 +2,9 @@
 
 # This is more complicated
 
+# Note: Kendal's alternative approach is in the repo too: get_SGdata.R
+
+
 library(tibble)
 coords <- tribble(
   ~place,  ~lon,         ~lat,
